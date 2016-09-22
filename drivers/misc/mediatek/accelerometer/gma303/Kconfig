@@ -1,0 +1,4 @@
+
+config MTK_GMA303
+	bool "gma303 for MediaTek package"
+	default n

@@ -1,0 +1,9 @@
+#
+# Tablet driver configuration
+#
+
+config INPUT_GFX1XM_SPI
+       bool "gfx1xm driver"
+       help
+          MEIZU BSP .
+

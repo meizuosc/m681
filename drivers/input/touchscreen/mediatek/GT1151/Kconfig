@@ -1,0 +1,20 @@
+#
+# Touchscreen driver configuration
+#
+if TOUCHSCREEN_MTK_GT1151
+
+config GT1151_FIRMWARE
+	string "GT1151 for Mediatek firmware"
+
+config GT1151_CONFIG
+	string "GT1151 for Mediatek config"
+
+config GT1151_ALLOW_DOWNGRADE
+	bool "GT1151 for Mediatek firmware downgrade"
+	default n
+	help
+	Say Y here if you allow touch firmware to downgrade.
+
+	If unsure, say N.
+
+endif

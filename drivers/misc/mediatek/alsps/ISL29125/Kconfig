@@ -1,0 +1,4 @@
+
+config MTK_ISL29125
+	bool "ISL29125 for MediaTek package"
+	default n

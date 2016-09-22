@@ -1,0 +1,35 @@
+#
+# MediaTek USB 3.0 Controller Driver
+#
+
+config USBIF_COMPLIANCE
+        tristate "MediaTek MUSB U3 USBIF COMPLIANCE"
+        default n
+
+config USB_MU3D_PIO_ONLY
+	tristate "MediaTek MUSB Gadget support EP0 PIO mode"
+	default n
+
+config USB_MU3D_DEFAULT_U2_MODE
+	tristate "MediaTek SSUSB default in USB High-Speed Mode"
+	default n
+
+config USB_MU3D_ONLY_U2_MODE
+	tristate "MediaTek SSUSB default in USB High-Speed Mode"
+	default n
+	help
+	  Support only U2 mode.
+
+config MTK_SIB_USB_SWITCH
+	bool "MediaTek USB and SIB switch"
+	help
+	  Support share USB pin to SIB function.
+
+config USB_MU3D_DRV
+	tristate "MediaTek MUSB Gadget support"
+	default n
+
+config USB_MU3D_DVT
+	tristate "MediaTek MUSB Gadget support"
+	default n
+

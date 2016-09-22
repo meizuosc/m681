@@ -1,0 +1,4 @@
+
+config MTK_QMCX983
+	bool "qmcX983 for MediaTek package"
+	default n

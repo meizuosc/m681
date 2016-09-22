@@ -1,0 +1,4 @@
+
+config MTK_MC6470
+	bool "MC6470 mag(acc+ mag) for MediaTek package"
+	default n

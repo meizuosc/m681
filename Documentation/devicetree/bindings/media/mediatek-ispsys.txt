@@ -1,0 +1,57 @@
+* Mediatek Camera ISP Driver
+
+This document describes the binding for the MediaTek camera ISP.
+
+Required properties:
+- compatible: "mediatek,mt6735-ispsys" for MT6735 SoCs
+- interrupts: IRQ for camera isp in SOC
+- reg: The base address of the isp register
+- clocks: device clocks
+- clock-name: Should be the names of the clocks
+   - "CG_SCP_SYS_DIS" for display CMOS
+   - "CG_SCP_SYS_ISP" for isp CMOS
+   - "CG_DISP0_SMI_COMMON" for DISP SMI
+   - "CG_IMAGE_CAM_SMI" for camera SMI
+   - "CG_IMAGE_CAM_CAM" for camera
+   - "CG_IMAGE_SEN_TG" for TG
+   - "CG_IMAGE_SEN_CAM" for sensor
+   - "CG_IMAGE_CAM_SV" for camsv
+   - "CG_IMAGE_LARB2_SMI" for larb2 SMI
+
+Example:
+
+	ispsys@15000000 {
+		compatible = "mediatek,mt6735-ispsys";
+		reg = <0x15004000 0x9000>,  /*ISP_ADDR      */
+			<0x1500D000 0x1000>,  /*INNER_ISP_ADDR      */
+			<0x15000000 0x10000>,  /*IMGSYS_CONFIG_ADDR      */
+			<0x10215000 0x3000>,  /*MIPI_ANA_ADDR      */
+			<0x10211000 0x1000>;  /*GPIO_ADDR      */
+
+		interrupts = <GIC_SPI 183 IRQ_TYPE_LEVEL_LOW>, /* CAM0 */
+			<GIC_SPI 184 IRQ_TYPE_LEVEL_LOW>, /* CAM1 */
+			<GIC_SPI 185 IRQ_TYPE_LEVEL_LOW>, /* CAM2 */
+			<GIC_SPI 206 IRQ_TYPE_LEVEL_LOW>, /* CAMSV0 */
+			<GIC_SPI 207 IRQ_TYPE_LEVEL_LOW>; /* CAMSV1 */
+
+		clocks = <&scpsys SCP_SYS_DIS>,
+			<&scpsys SCP_SYS_ISP>,
+			<&mmsys MM_DISP0_SMI_COMMON>,
+			<&imgsys IMG_IMAGE_CAM_SMI>,
+			<&imgsys IMG_IMAGE_CAM_CAM>,
+			<&imgsys IMG_IMAGE_SEN_TG>,
+			<&imgsys IMG_IMAGE_SEN_CAM>,
+			<&imgsys IMG_IMAGE_CAM_SV>,
+			<&imgsys IMG_IMAGE_LARB2_SMI>;
+
+		clock-names = "CG_SCP_SYS_DIS",
+			"CG_SCP_SYS_ISP",
+			"CG_DISP0_SMI_COMMON",
+			"CG_IMAGE_CAM_SMI",
+			"CG_IMAGE_CAM_CAM",
+			"CG_IMAGE_SEN_TG",
+			"CG_IMAGE_SEN_CAM",
+			"CG_IMAGE_CAM_SV",
+			"CG_IMAGE_LARB2_SMI";
+	};
+

@@ -1,0 +1,4 @@
+
+config MTK_DA213
+	bool "DA213 for MediaTek package"
+	default n

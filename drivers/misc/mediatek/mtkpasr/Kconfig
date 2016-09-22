@@ -1,0 +1,20 @@
+config MTKPASR
+	bool "MTK proprietary PASR mechanism"
+	depends on !MTK_SVP && SYSFS && ZSMALLOC
+	select LZO_COMPRESS
+	select LZO_DECOMPRESS
+	default n
+	help
+	  Mediatek PASR mechanism
+
+config MTKPASR_DEBUG
+	bool "MTK proprietary PASR debug support"
+	depends on MTKPASR
+	default n
+	help
+	  This option adds additional debugging code to MTK PASR
+
+config MTKPASR_NO_LASTBANK
+	bool "Modem/TEE/Others occupy the last bank"
+	depends on MTKPASR
+	default n

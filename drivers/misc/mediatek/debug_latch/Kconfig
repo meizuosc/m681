@@ -1,0 +1,11 @@
+config MTK_LASTBUS
+	bool "Enable MTK LASTBUS LATCH"
+	default n
+	help
+	  CONFIG_MTK_LASTBUS
+
+config MTK_DEBUG_LATCH
+	bool "Enable MTK DEBUG LATCH"
+	default n
+	help
+	  CONFIG_MTK_DEBUG_LATCH

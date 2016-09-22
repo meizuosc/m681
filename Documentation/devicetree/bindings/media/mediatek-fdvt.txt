@@ -1,0 +1,32 @@
+* Mediatek Camera FDVT Driver
+
+This document describes the binding for the MediaTek camera FDVT.
+
+Required properties:
+- compatible: "mediatek,mt6735-fdvt" for MT6735 SoCs
+- interrupts: IRQ for camera isp in SOC
+- reg: The base address of the isp register
+- clocks: device clocks
+- clock-name: Should be the names of the clocks
+   - "CG_SCP_SYS_DIS" for display CMOS
+   - "CG_SCP_SYS_ISP" for isp CMOS
+   - "CG_DISP0_SMI_COMMON" for DISP SMI
+   - "CG_IMG_IMAGE_FD" for camera SMI
+
+
+Example:
+
+		fdvt@0x1500B000 {
+			compatible = "mediatek,mt6735-fdvt";
+			reg = <0x1500B000 0x1000>;
+			interrupts = <GIC_SPI 208 IRQ_TYPE_LEVEL_LOW>;
+			clocks = <&scpsys SCP_SYS_DIS>,
+					<&scpsys SCP_SYS_ISP>,
+					<&mmsys MM_DISP0_SMI_COMMON>,
+					<&imgsys IMG_IMAGE_FD>;
+			clock-names = "FD-SCP_SYS_DIS",
+						"FD-SCP_SYS_ISP",
+						"FD-MM_DISP0_SMI_COMMON",
+						"FD-IMG_IMAGE_FD";
+		};
+

@@ -1,0 +1,5 @@
+
+config MTK_MC3413
+	bool "MC3413 for MediaTek package"
+	default n
+	

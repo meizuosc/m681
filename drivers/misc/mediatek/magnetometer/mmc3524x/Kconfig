@@ -1,0 +1,4 @@
+
+config MTK_MMC3524X
+	bool "mmc3524x for MediaTek package"
+	default n

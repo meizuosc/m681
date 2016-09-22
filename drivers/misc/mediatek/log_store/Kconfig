@@ -1,0 +1,13 @@
+config MTK_DRAM_LOG_STORE
+	default n
+	bool "mtk DRAM log store"
+
+config MTK_DRAM_LOG_STORE_ADDR
+	hex "DRAM log store address(use SRAM)"
+	default 0
+	depends on MTK_DRAM_LOG_STORE
+
+config MTK_DRAM_LOG_STORE_SIZE
+	hex "DRAM log store size(use SRAM)"
+	default 0
+	depends on MTK_DRAM_LOG_STORE

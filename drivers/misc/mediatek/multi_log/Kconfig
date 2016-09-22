@@ -1,0 +1,3 @@
+config MTK_MULTI_LOG
+	default n
+	bool "mtk multi log store to sd"

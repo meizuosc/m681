@@ -1,0 +1,17 @@
+#
+# MediaTek USB USB TYPEC Driver
+#
+
+config MTK_TYPEC_SWITCH
+        bool "MediaTek USB TYPE-C Driver"
+        default n
+	---help---
+	  Enables support usb type-c.
+	  If unsure, say N.
+
+config MTK_TYPEC_SWITCH_FUSB302
+	bool "MediaTek USB TYPE-C Driver with external solution (FUSB302)"
+	default n
+	---help---
+	  Enables support usb type-c and FUSB302.
+	  If unsure, say N.

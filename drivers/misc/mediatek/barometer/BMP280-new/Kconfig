@@ -1,0 +1,4 @@
+
+config MTK_BMP280_NEW
+	bool "BMP280 for MediaTek package"
+	default n

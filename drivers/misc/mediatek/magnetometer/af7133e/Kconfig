@@ -1,0 +1,4 @@
+
+config MTK_AF7133E
+	bool "af7133e for MediaTek package"
+	default n
