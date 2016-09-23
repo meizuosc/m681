@@ -12,9 +12,11 @@ HOW TO COMPILE
 
 ###2. Compiling###
 
-  <code>mkdir out</code>
-  <code>make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- O=`pwd`/out m3note_defconfig</code>
-  <code>make -j8 ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- O=`pwd`/out</code>
+```
+mkdir out
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- O=`pwd`/out m3note_defconfig
+make -j8 ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- O=`pwd`/out
+```
 
   Note:
   + Make sure you have arm cross tool chain, maybe you can download [here](http://www.linaro.org/downloads)
